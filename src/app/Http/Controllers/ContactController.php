@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\ContactRequest;
+
+class ContactController extends Controller
+{
+    public function index()
+    {
+        return view('index');
+    }
+    public function confirm(ContactRequest $request)
+    {
+        $contact = $request->only([
+            'categry_id',
+            'first_name',
+            'last_name',
+            'gender',
+            'email',
+            'tel',
+            'address',
+            'building',
+            'detail',
+            'created_at',
+            'updated_at',
+        ]);
+        return view('confirm', compact('contact'));
+    }
+    public function store(ContactRequest $request)
+    {
+        $contact = $request->only([
+            'categry_id',
+            'first_name',
+            'last_name',
+            'gender',
+            'email',
+            'tel',
+            'address',
+            'building',
+            'detail',
+            'created_at',
+            'updated_at',
+        ]);
+    }
+}
