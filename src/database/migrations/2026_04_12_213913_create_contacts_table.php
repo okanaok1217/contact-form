@@ -24,8 +24,7 @@ class CreateContactsTable extends Migration
             $table->string('address');
             $table->string('building')->nullable();
             $table->text('detail');
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 
